@@ -217,9 +217,21 @@ if (empty($pricing)) {
             </div>
             
             <div class="services-grid">
-                <?php foreach ($services as $srv): ?>
+                <?php foreach ($services as $srv): 
+                    $icon_map = [
+                        'ShoppingBag' => 'shopping-bag',
+                        'Layers' => 'layers',
+                        'TrendingUp' => 'trending-up',
+                        'Globe' => 'globe',
+                        'Code' => 'code',
+                        'ShieldCheck' => 'shield-check'
+                    ];
+                    $current_icon = isset($icon_map[$srv['icon']]) ? $icon_map[$srv['icon']] : 'star';
+                ?>
                 <div class="service-card">
-                    <div class="service-icon">★</div>
+                    <div class="service-icon">
+                        <i data-lucide="<?php echo $current_icon; ?>"></i>
+                    </div>
                     <h3><?php echo htmlspecialchars($srv['title']); ?></h3>
                     <p><?php echo htmlspecialchars($srv['short_desc']); ?></p>
                     <a href="contact.php?service=<?php echo urlencode($srv['title']); ?>" class="btn btn-secondary w-full text-center">Launch Channel Now</a>
@@ -396,5 +408,8 @@ if (empty($pricing)) {
         </div>
     </footer>
 
+    <!-- Lucide Library & Custom Interaction Script -->
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

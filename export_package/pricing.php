@@ -114,6 +114,8 @@ if (empty($pricing)) {
                 <a href="contact.php" class="btn btn-secondary">Get Free Audit</a>
                 <a href="contact.php" class="btn btn-primary">Free Consultation</a>
             </nav>
+            
+            <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
         </div>
     </header>
 
@@ -354,5 +356,8 @@ if (empty($pricing)) {
     });
     </script>
 
+    <!-- Lucide Library & Custom Interaction Script -->
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

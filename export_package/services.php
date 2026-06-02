@@ -102,6 +102,8 @@ if (empty($services)) {
                 <a href="contact.php" class="btn btn-secondary">Get Free Audit</a>
                 <a href="contact.php" class="btn btn-primary">Free Consultation</a>
             </nav>
+            
+            <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
         </div>
     </header>
 
@@ -119,7 +121,20 @@ if (empty($services)) {
                 <?php foreach ($services as $srv): ?>
                 <div class="service-card" style="background-color: white; border: 1px solid var(--border); border-radius: 24px; padding: 40px; display: grid; grid-template-cols: 1fr; gap: 24px;">
                     <div style="display: flex; flex-direction: column; gap: 16px;">
-                        <div class="service-icon" style="margin-bottom: 0;">★</div>
+                        <?php 
+                        $icon_map = [
+                            'ShoppingBag' => 'shopping-bag',
+                            'Layers' => 'layers',
+                            'TrendingUp' => 'trending-up',
+                            'Globe' => 'globe',
+                            'Code' => 'code',
+                            'ShieldCheck' => 'shield-check'
+                        ];
+                        $current_icon = isset($icon_map[$srv['icon']]) ? $icon_map[$srv['icon']] : 'star';
+                        ?>
+                        <div class="service-icon" style="margin-bottom: 0;">
+                            <i data-lucide="<?php echo $current_icon; ?>"></i>
+                        </div>
                         <h2 style="font-size: 24px; color: var(--primary);"><?php echo htmlspecialchars($srv['title']); ?></h2>
                         <span style="font-family: var(--font-mono); font-size: 11px; font-weight: bold; text-transform: uppercase; color: var(--text-light); bg: var(--light); padding: 4px 8px; border-radius: 4px; width: fit-content; background: #f1f5f9;">
                             Integrated Portals: <?php echo htmlspecialchars($srv['platforms'] ?? 'All Marketplace'); ?>
@@ -186,5 +201,8 @@ if (empty($services)) {
         </div>
     </footer>
 
+    <!-- Lucide Library & Custom Interaction Script -->
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
