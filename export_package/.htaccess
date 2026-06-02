@@ -1,0 +1,27 @@
+# Local2Online - Apache/InfinityFree Server Rules
+# Optimized for Custom Domains and Security
+
+# Prevent Directory Browsing
+Options -Indexes
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect /filename.php to /filename (Clean URLs)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+)\.php\ HTTP/
+RewriteRule ^([^/]+)\.php$ /$1 [R=301,L]
+
+# Internally rewrite /filename to /filename.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)$ /$1.php [L]
+
+# Prevent Access to Database schemas or instruction files
+<Files "schema.sql">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "README.md">
+    Order Allow,Deny
+    Deny from all
+</Files>
