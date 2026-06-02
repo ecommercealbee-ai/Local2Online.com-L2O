@@ -129,7 +129,7 @@ if ($is_logged_in) {
                         'date' => date('Y-m-d'),
                         'author' => $_SESSION['admin_user']
                     ]);
-                    $message = "🎉 Article '" . htmlspecialchars($title) . "' uploaded and published live on blog.php!";
+                    $message = "🎉 Article '" . htmlspecialchars($title) . "' uploaded and published live on the front-end blog!";
                 } catch (Exception $e) {
                     $message = "Error publishing blog: " . $e->getMessage();
                 }

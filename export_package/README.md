@@ -56,6 +56,6 @@ You can change these credentials or delete test leads directly in the admin dash
 
 ---
 
-## ⚡ Step 5: Clean URL Optimization (Optional)
+## ⚡ Step 5: Premium Single-Page Performance (Built-in)
 
-If you would like your URLs to look clean (e.g. `local2online.com/services` instead of `.php`), we have included a standard `.htaccess` file. If your InfinityFree server supports mod_rewrite, it will remove `.php` files from the address bar automatically.
+We have consolidated the entire client-facing front-end into a single, ultra-high-performance dynamic page (`index.php`) utilizing client-side hash routing. Navigation is instantaneous, completely reload-free, and URLs look clean (such as `local2online.com/#services` or `local2online.com/#pricing`) out of the box. Setup is now incredibly easy since you have fewer files to manage!
