@@ -1,0 +1,6 @@
+{
+  "name": "Local2Online",
+  "description": "We help local retailers, manufacturers, and brands start selling online and grow on Amazon, Flipkart, Meesho, Shopify, and more.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
